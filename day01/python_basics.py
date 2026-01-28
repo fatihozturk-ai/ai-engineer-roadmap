@@ -44,6 +44,13 @@ def square(number):
 result = square(5)
 print(result)
 
+user_age = int(input("Yaşını gir: "))
+
+if user_age > 30 :
+	print("cenaze olmuş")
+else:
+	print("genç tayfaa")
+
 
 
 
