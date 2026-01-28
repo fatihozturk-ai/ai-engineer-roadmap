@@ -1,5 +1,93 @@
-x=3
+""" x=3
 y=5
 
-print("toplamı: " x+y)
+print("toplamı: " , x+y)
 
+print("5 + 6 = " , 5+6)
+print("5 * 6 = " , 5*6)
+
+
+
+age = 25 
+name = "FAtti"
+height = 1.75 
+
+print("age: ",age)
+print("name:",name) 
+
+
+year = 2026
+
+birthyear = 2026-age 
+print("birthyear is ",birthyear)
+
+
+name = input("ismini gir")
+age = int(input("yaşını gir"))
+
+print(name)
+print("doğum yılı = ",year-age)
+
+if age >= 18 :
+    print("Reşitsin")
+else:
+    print("Reşit değilsin")
+
+
+boy = float(input("boyunuzu girin"))
+kilo = float(input("kilonuzu girin"))
+
+bmi = kilo / (boy*boy) 
+
+if bmi > 25 :
+    print("Fazla Kilo")
+elif bmi>=18.5 :
+    print("normal")
+else:
+    print("zayıf")
+
+
+print(bmi)
+print(f"bmi = {bmi:.2f}") """
+
+def bmi_hesapla(boy_cm,kilo):
+    boy_m = boy_cm/100
+    return kilo/(boy_m*boy_m)
+
+print(bmi_hesapla(175,75))
+print(f"{bmi_hesapla(175,75):.2f}")
+
+while True :
+    boy = float(input("boy(cm): ?"))
+    kilo = float(input("kilo(kg) ?"))
+    bmi = bmi_hesapla(boy,kilo)
+
+    if bmi>25: 
+        print("yüksek")
+    elif bmi>18.5:
+        print("normal")
+    else:
+        print("düşük")
+    
+    devam = input("devam edilsin mi ? (e/h)")
+    if devam == "h" :
+        break 
+
+""" def bmi_durum(bmi):
+    if bmi > 25 :
+        print("yüksek")
+    elif bmi>=18.5 :
+        print("normal")
+    else:
+        print("düşük")
+ """
+def bmi_durum(bmi):
+    if bmi > 25 :
+        return "yüksek"
+    elif bmi>=18.5 :
+        return "normal"
+    else:
+        return "düşük"
+
+bmi = 23
+print("Durum :", bmi_durum(bmi))
