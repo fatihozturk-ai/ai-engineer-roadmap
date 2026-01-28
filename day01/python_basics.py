@@ -41,7 +41,7 @@ def square(number):
 	return number*number
 
 
-result = square(5)
+result = square(6)
 print(result)
 
 user_age = int(input("Yaşını gir: "))
