@@ -50,9 +50,9 @@ else:
 print(bmi)
 print(f"bmi = {bmi:.2f}") """
 
-def bmi_hesapla(boy_cm,kilo):
-    boy_m = boy_cm/100
-    return kilo/(boy_m*boy_m)
+# def bmi_hesapla(boy_cm,kilo):
+#     boy_m = boy_cm/100
+#     return kilo/(boy_m*boy_m)
 
 """ print(bmi_hesapla(175,75))
 print(f"{bmi_hesapla(175,75):.2f}")
@@ -92,32 +92,74 @@ while True :
 bmi = 23
 print("Durum :", bmi_durum(bmi)) """
 
-print("DAY 5-------------------")
+# print("DAY 5-------------------")
 
-bmi_list = [15.5,16.5,24,27.2]
-print(bmi_list,"---------")
+# bmi_list = [15.5,16.5,24,27.2]
+# print(bmi_list,"---------")
 
 
-for i in bmi_list:
-    print(i)
+# for i in bmi_list:
+#     print(i)
+
+# def bmi_durum(bmi) :
+#     if bmi>25 :
+#         return "yüksek"
+#     elif bmi>18.5 :
+#         return "normal"
+#     else :
+#         return "düşük"
+
+# for i in bmi_list :
+#     print(i,"-->",bmi_durum(i))
+
+
+# toplam = 0
+
+# for i in bmi_list :
+#     toplam += i 
+
+# ortalama = toplam / len(bmi_list)
+# print("ortalama : " , round(ortalama,2))
+
+# #Dictionary
+
+# user = {
+#     "name" : "Fatih" ,
+#     "age" : 27 ,
+#     "weight" : 75
+# }
+
+# print(user["name"])
+# print(user["age"])
+
+
+# users = [
+#     {"name":"fatih","bmi":22.4},
+#     {"name":"zeynep","bmi":15.3},
+#     {"name":"hasan","bmi":8.5}
+# ]
+
+# for u in users :
+#     print(u["name"] , "->",u["bmi"],bmi_durum(u["bmi"]))
+
+
+people = [
+    {"name":"A","weight":75,"height":1.8},
+    {"name":"B","weight":100,"height":1.95},
+]
+
+def bmi_hesaplaa(boy,kilo) :
+    return kilo / (boy*boy) 
 
 def bmi_durum(bmi) :
     if bmi>25 :
         return "yüksek"
-    elif bmi>18.5 :
+    elif bmi>=18.5 :
         return "normal"
     else :
         return "düşük"
 
-for i in bmi_list :
-    print(i,"-->",bmi_durum(i))
-
-
-toplam = 0
-
-for i in bmi_list :
-    toplam += i 
-
-ortalama = toplam / len(bmi_list)
-print("ortalama : " , round(ortalama,2))
+for p in people :
+    bmi = bmi_hesaplaa(p["height"],p["weight"])
+    print(p["name"],"->",f"{bmi:.2f}","-",bmi_durum(bmi))
 
