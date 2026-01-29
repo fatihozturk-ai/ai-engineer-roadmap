@@ -54,7 +54,7 @@ def bmi_hesapla(boy_cm,kilo):
     boy_m = boy_cm/100
     return kilo/(boy_m*boy_m)
 
-print(bmi_hesapla(175,75))
+""" print(bmi_hesapla(175,75))
 print(f"{bmi_hesapla(175,75):.2f}")
 
 while True :
@@ -72,7 +72,7 @@ while True :
     devam = input("devam edilsin mi ? (e/h)")
     if devam == "h" :
         break 
-
+ """
 """ def bmi_durum(bmi):
     if bmi > 25 :
         print("yüksek")
@@ -81,7 +81,7 @@ while True :
     else:
         print("düşük")
  """
-def bmi_durum(bmi):
+""" def bmi_durum(bmi):
     if bmi > 25 :
         return "yüksek"
     elif bmi>=18.5 :
@@ -90,4 +90,34 @@ def bmi_durum(bmi):
         return "düşük"
 
 bmi = 23
-print("Durum :", bmi_durum(bmi))
+print("Durum :", bmi_durum(bmi)) """
+
+print("DAY 5-------------------")
+
+bmi_list = [15.5,16.5,24,27.2]
+print(bmi_list,"---------")
+
+
+for i in bmi_list:
+    print(i)
+
+def bmi_durum(bmi) :
+    if bmi>25 :
+        return "yüksek"
+    elif bmi>18.5 :
+        return "normal"
+    else :
+        return "düşük"
+
+for i in bmi_list :
+    print(i,"-->",bmi_durum(i))
+
+
+toplam = 0
+
+for i in bmi_list :
+    toplam += i 
+
+ortalama = toplam / len(bmi_list)
+print("ortalama : " , round(ortalama,2))
+
