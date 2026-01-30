@@ -143,23 +143,74 @@ print("Durum :", bmi_durum(bmi)) """
 #     print(u["name"] , "->",u["bmi"],bmi_durum(u["bmi"]))
 
 
-people = [
-    {"name":"A","weight":75,"height":1.8},
-    {"name":"B","weight":100,"height":1.95},
-]
+# people = [
+#     {"name":"A","weight":75,"height":1.8},
+#     {"name":"B","weight":100,"height":1.95},
+# ]
 
-def bmi_hesaplaa(boy,kilo) :
-    return kilo / (boy*boy) 
 
-def bmi_durum(bmi) :
-    if bmi>25 :
-        return "yüksek"
-    elif bmi>=18.5 :
-        return "normal"
-    else :
-        return "düşük"
 
-for p in people :
-    bmi = bmi_hesaplaa(p["height"],p["weight"])
-    print(p["name"],"->",f"{bmi:.2f}","-",bmi_durum(bmi))
+# for p in people :
+#     bmi = bmi_hesapla(p["height"],p["weight"])
+#     print(p["name"],"->",f"{bmi:.2f}","-",bmi_durum(bmi))
 
+
+# vib_banko = [
+#     {"name": "batuhan","age" : 30 , "position" : "junior"},
+#     {"name": "fatih","age" : 25 , "position" : "senior"}
+# ]
+
+# for b in vib_banko :
+#     print(b["name"] , "->" , b["position"])
+
+# def bmi_hesapla(boy,kilo) :
+#     return kilo / (boy*boy) 
+
+
+# def bmi_durum(bmi) :
+#     if bmi>25 :
+#         return "yüksek"
+#     elif bmi>=18.5 :
+#         return "normal"
+#     else :
+#         return "düşük"
+
+
+
+# import csv
+# people = [] 
+
+# with open("people.csv",newline="") as file :
+#     reader = csv.DictReader(file)
+#     for row in reader :
+#         row["height"] = float(row["height"])
+#         row["weight"] = float(row["weight"])
+#         people.append(row)
+
+# print(people)
+
+# for p in people :
+#     bmi = bmi_hesapla(p["height"],p["weight"])
+#     print(p["name"],"->",f"{bmi:.2f}")
+
+# toplam = 0
+# for p in people :
+#     toplam += bmi_hesapla(p["height"],p["weight"])
+
+# ortalama = toplam / len(people)
+# print(f"Ortalama : {ortalama:.2f}")
+
+
+import csv 
+
+members = []
+
+with open("gym.csv",newline="") as file :
+    reader = csv.DictReader(file)
+    for row in reader :
+        row["odenen tutar"] = float(row["odenen tutar"])
+        members.append(row)
+
+for m in members :
+    print(m["isim"],"->",m["odenen tutar"])
+    
