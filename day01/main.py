@@ -201,16 +201,77 @@ print("Durum :", bmi_durum(bmi)) """
 # print(f"Ortalama : {ortalama:.2f}")
 
 
-import csv 
+# import csv 
+
+# members = []
+
+# with open("gym.csv","r",newline="") as file :
+#     reader = csv.DictReader(file,delimiter=";")
+#     for row in reader :
+#         row["odenen tutar"] = float(row["odenen tutar"])
+#         members.append(row)
+
+# for m in members :
+#     print(m["isim"],"->",m["odenen tutar"])
+    
+
+# with open("gym.csv","a",newline="") as file :
+#     writer = csv.writer(file,delimiter=";")
+#     writer.writerow(["ibrahim","kotan",15000])
+    
+
+""" with open("gym.csv","w",newline="") as file:
+    writer = csv.writer(file,delimiter=";") 
+    writer.writerow(["isim","soyisim","odenen tutar"])
+    writer.writerow(["xx","yy",15000]) """
+
+
+import csv
 
 members = []
 
-with open("gym.csv",newline="") as file :
-    reader = csv.DictReader(file)
+with open("gym.csv","r",newline="") as file : 
+    reader = csv.DictReader(file,delimiter=";")
     for row in reader :
-        row["odenen tutar"] = float(row["odenen tutar"])
-        members.append(row)
+            row["odenen tutar"] = float(row["odenen tutar"])
+            row["borc"] = float(row["borc"])
+            # row["borc"] = float(row["borc"]) if row["borc"] else 0                   # borç satırı doluysa float yap boşsa 0 olarak güncelle
+            members.append(row)
 
 for m in members :
-    print(m["isim"],"->",m["odenen tutar"])
+    print(m["isim"],"->",m["odenen tutar"],"->",m["borc"])
+
+with open("gym.csv","w",newline="") as file :
+    writer = csv.DictWriter(file,delimiter=";")
+    anaBorc = members[0]["borc"]
+    for m in members[1:] :
+         m["borc"] = anaBorc-m["odenen tutar"]
+         print(m["borc"])
+         anaBorc = m["borc"]
+    writer.writerows(members)
+
+# with open("gym.csv","a",newline="") as file :
+#     writer = csv.writer(file,delimiter=";")
+#     anaBorc = members[0]["borc"]
+#     for m in members :
+#          anaBorc -= m["odenen tutar"]
+#          m["borc"] = anaBorc
+#          print(anaBorc)
+         
+
+
+
+
     
+# import csv
+
+# rows = []
+
+# with open("gym.csv", newline="", encoding="cp1254") as f:
+#     reader = csv.DictReader(f, delimiter=";")
+#     for row in reader:
+#         rows.append(row)
+
+# print("Satır sayısı:", len(rows))
+# for r in rows:
+#     print(r)
