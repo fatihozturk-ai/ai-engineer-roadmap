@@ -233,6 +233,7 @@ members = []
 with open("gym.csv","r",newline="") as file : 
     reader = csv.DictReader(file,delimiter=";")
     for row in reader :
+            #print(row.keys(),"--------------")
             row["odenen tutar"] = float(row["odenen tutar"])
             row["borc"] = float(row["borc"])
             # row["borc"] = float(row["borc"]) if row["borc"] else 0                   # borç satırı doluysa float yap boşsa 0 olarak güncelle
@@ -241,13 +242,18 @@ with open("gym.csv","r",newline="") as file :
 for m in members :
     print(m["isim"],"->",m["odenen tutar"],"->",m["borc"])
 
-with open("gym.csv","w",newline="") as file :
-    writer = csv.DictWriter(file,delimiter=";")
+fieldnames = ["isim","soyisim","odenen tutar","borc"]
+
+with open("gym-out.csv","w",newline="") as file :
+    writer = csv.DictWriter(file,fieldnames=fieldnames,delimiter=";")
     anaBorc = members[0]["borc"]
-    for m in members[1:] :
+    print(anaBorc)
+    for m in members :
          m["borc"] = anaBorc-m["odenen tutar"]
          print(m["borc"])
          anaBorc = m["borc"]
+    
+    writer.writeheader()
     writer.writerows(members)
 
 # with open("gym.csv","a",newline="") as file :
