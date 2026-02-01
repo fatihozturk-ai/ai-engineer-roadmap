@@ -15,7 +15,7 @@ def to_float(x) :
 with open("borclular.csv","r",newline="") as file :
     reader = csv.DictReader(file,delimiter=";")
     for row in reader :
-        row["borc"] =  float(row["borc"])  if row["borc"] else 0
+        row["borc"] =  to_float(row["borc"])
         members.append(row) 
 
     print(members)
@@ -29,8 +29,6 @@ print(toplamBorc)
 
 
 import csv 
-
-
 
 with open("borclular-out.csv","w",newline="") as file :
     fieldnames = ["isim","borc"]
