@@ -45,3 +45,21 @@ def yaz(dosya_adi,members) :
 
 
 yaz("modularFunct-out.csv",members) 
+
+
+def toplamOdenenTutar(members) :
+    total = 0
+    for m in members :
+        total += m["odenen tutar"]
+    return total 
+
+def maxOdenenTutar(members) :
+    en_Buyuk = members[0]
+    for m in members :
+        if m["odenen tutar"] > en_Buyuk["odenen tutar"] :
+            en_Buyuk = m
+    
+    return en_Buyuk
+
+print("toplam odenen tutar: " , toplamOdenenTutar(members))
+print("en buyuk odenen tutar: " , maxOdenenTutar(members))
