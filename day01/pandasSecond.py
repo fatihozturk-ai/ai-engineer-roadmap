@@ -52,6 +52,21 @@ print(df["Job Title"].isin(["Director" , "Marketing Manager" ,"Financial Manager
 
 print(df[df["Job Title"].isin(["Director" , "Marketing Manager" ,"Financial Manager"])]) # içinde olanlar
 
+df.at[0,"Job Title"] = None
+df.at[1,"Job Title"] = pd.NA
+
+
+print(df[df["Job Title"].str.contains("Manager",na=True)])    # job title içersiinde Manager olanları bas
+
+print(df[df["Age"] > 30])
+
+print(df[(df["Age"] >= 30) & (df["Age"] <= 40)])
+
+
+# import numpy as np
+
+# df.at[3,"Job Title"] = np.nan
+
 
 
 # df = pd.read_csv("Salary_Data.csv", sep=",")
