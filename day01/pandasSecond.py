@@ -63,6 +63,7 @@ print(df[df["Age"] > 30])
 print(df[(df["Age"] >= 30) & (df["Age"] <= 40)])
 
 
+
 # import numpy as np
 
 # df.at[3,"Job Title"] = np.nan
