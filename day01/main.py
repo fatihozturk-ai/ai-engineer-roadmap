@@ -226,7 +226,7 @@ print("Durum :", bmi_durum(bmi)) """
     writer.writerow(["xx","yy",15000]) """
 
 
-import csv
+""" import csv
 
 members = []
 
@@ -254,7 +254,7 @@ with open("gym-out.csv","w",newline="") as file :
          anaBorc = m["borc"]
     
     writer.writeheader()
-    writer.writerows(members)
+    writer.writerows(members) """
 
 # with open("gym.csv","a",newline="") as file :
 #     writer = csv.writer(file,delimiter=";")
@@ -281,3 +281,18 @@ with open("gym-out.csv","w",newline="") as file :
 # print("Satır sayısı:", len(rows))
 # for r in rows:
 #     print(r)
+
+
+
+import pandas as pd 
+
+df = pd.read_csv("gym.csv",sep=";")
+
+df = df.sort_values("odenen tutar")
+print(df)
+
+df = df.nsmallest(2,"odenen tutar")
+print(df)
+
+print(df.head(15))
+print(df.describe())
