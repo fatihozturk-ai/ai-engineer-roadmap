@@ -58,4 +58,5 @@ print(df)
 
 
 print(df.groupby("Education Level").size()) # cinsiyetleri gruplandırıp sayıları veriyor
-print(df.groupby("Gender").apply(lambda x: x["Salary"].mean()))  # cinsiyetleri ve maaş ortalamalarını
+print(df.groupby("Job Title").apply(lambda x: x[["Salary"]]))  # meslek isimlerini ve maaşları basar çift köşeli parantez
+# ama bu satırı kullanmak yerine iki kolonu basmak için direkt df["Job title","Salary"]
